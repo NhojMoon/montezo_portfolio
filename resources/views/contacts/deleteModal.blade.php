@@ -1,4 +1,3 @@
-<!-- deleteModal.blade.php -->
 <div class="modal fade" id="deleteModal{{$contact->id}}" tabindex="-1" aria-labelledby="deleteModal{{$contact->id}}Label" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
