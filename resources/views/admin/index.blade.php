@@ -32,11 +32,11 @@
                                         <tr>
                                             <td>{{ $loop->iteration }}</td>
                                             <td>
-                                                @if($user->role == 'admin')
+                                            @if($user->role == 'admin')
                                                 <div class="badge badge-success">Admin</div>
                                                 @else
                                                 <div class="badge badge-primary">Spectator</div>
-                                                @endif
+                                            @endif
                                             </td>
                                             @if($user->avatar)
                                             <td>
@@ -53,7 +53,6 @@
                                                  <a href="#" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#editModal{{$user->id}}">
                                                     <i class="fas fa-edit"></i>
                                                 </a>
-
                                                 <a href="#" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#deleteModal{{$user->id}}">
                                                     <span><i class="fa-solid fa-trash"></i></span>
                                                 </a>

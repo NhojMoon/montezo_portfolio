@@ -15,7 +15,7 @@ class RoleChecker
         }
 
         // Check if the user has the required role
-        if (!$request->user()->hasRole($role)) {
+        if (!$request->user()->isAdmin($role)) {
             abort(403, 'Unauthorized Action is not allowed!!');
         }
 

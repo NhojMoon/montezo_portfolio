@@ -25,7 +25,7 @@
                                     <th>School_Year</th>
                                     <th>Educational_stage</th>
                                     <th>School_Name</th>
-                                    <th>Decription</th>
+                                    <th>Description</th>
                                     <th width="150px">Action</th>
                                 </tr>
                                 @foreach ($education as $education)

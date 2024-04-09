@@ -1,6 +1,6 @@
 @include('layouts.header')
 
-
+@include('layouts.navbar')
 
 @include('layouts.logoutModal')
 
@@ -10,5 +10,4 @@
 
 @yield('content')
 
-@include('layouts.navbar')
 @include('layouts.footer')

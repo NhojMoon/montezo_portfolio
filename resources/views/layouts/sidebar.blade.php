@@ -2,7 +2,7 @@
         <div class="main-sidebar sidebar-style-3">
             <aside id="sidebar-wrapper">
                 <div class="sidebar-brand">
-                    <a href="{{ route('home') }}">Admin DB</a>
+                    <a href="{{ route('home') }}">{{ucwords(Auth::user()->role)}}</a>
                 </div>
                 <div class="sidebar-brand sidebar-brand-sm">
                     <a href="{{ route('home') }}">ADB</a>
@@ -17,11 +17,10 @@
                     <li class="dropdown">
                         <a href="{{ route('home') }}" class="nav-link has-dropdown"><i class="fa-solid fa-layer-group"></i> <span>Features</span></a>
                         <ul class="dropdown-menu">
-                            <li><a class="nav-link" href="/work">Project (works)</a></li>
-                            <li><a class="nav-link" href="/myblog">My Blog</a></li>
                             <li><a class="nav-link" href="/education">Educational</a></li>
                             <li><a class="nav-link" href="/experience">Experiences</a></li>
                             <li><a class="nav-link" href="/skills">Skills</a></li>
+                            <li><a class="nav-link" href="/work">Project (works)</a></li>
                         </ul>
                     </li>
                     <li class="menu-header">Sub-Main</li>

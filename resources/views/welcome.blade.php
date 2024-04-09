@@ -36,9 +36,7 @@
 	          <li class="nav-item"><a href="#home-section" class="nav-link"><span>Home</span></a></li>
 	          <li class="nav-item"><a href="#about-section" class="nav-link"><span>About</span></a></li>
 	          <li class="nav-item"><a href="#resume-section" class="nav-link"><span>Resume</span></a></li>
-	          <!-- <li class="nav-item"><a href="#services-section" class="nav-link"><span>Services</span></a></li> -->
 	          <li class="nav-item"><a href="#projects-section" class="nav-link"><span>Projects</span></a></li>
-	          <li class="nav-item"><a href="#blog-section" class="nav-link"><span>My Blog</span></a></li>
 	          <li class="nav-item"><a href="#contact-section" class="nav-link"><span>Contact</span></a></li>
 			  <li>
 				@if (Route::has('login'))
@@ -150,40 +148,18 @@
 					<div class="col-md-9">
 					  <div id="page-1" class= "page one">
 					  	<h2 class="heading">Education</h2>
-					    <div class="resume-wrap d-flex ftco-animate">
+					    <div class="resume-wrap d-flex ftco-animate align-items-left justify-content-left">
 					    	<div class="icon d-flex align-items-center justify-content-center">
 					    		<span class="flaticon-ideas"></span>
 					    	</div>
 					    	<div class="text pl-3">
-		    					<span class="date">2014-2015</span>
-		    					<h2>Primary Education</h2>
-		    					<span class="position">Hilongos South Central School (HSCS)</span>
-		    					<p>A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
+							@foreach($educations as $education)
+		    					<span class="date">{{ $education->school_year }}</span>
+		    					<h2><span>{{ $education->educational_stage }}</span></h2>
+		    					<span class="position">{{ $education->school_name }}</span>
+		    					<p><span>{{ $education->school_description }}</span></p><br>
+							@endforeach
 	    					</div>
-	    				</div>
-	    				<div class="resume-wrap d-flex ftco-animate">
-	    					<div class="icon d-flex align-items-center justify-content-center">
-					    		<span class="flaticon-ideas"></span>
-					    	</div>
-					    	<div class="text pl-3">
-		    					<span class="date">2014-2015</span>
-		    					<h2>Secondary Education</h2>
-		    					<span class="position">Mapandan National High School (MNHS)</span><br>
-                                <span class="position">MLG College of Learning Inc.</span><br>
-                                <span class="position">Hilongos National Vocational School (HNVS)</span>
-		    					<p>A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
-		    				</div>
-	    				</div>
-	    				<div class="resume-wrap d-flex ftco-animate">
-	    					<div class="icon d-flex align-items-center justify-content-center">
-					    		<span class="flaticon-ideas"></span>
-					    	</div>
-					    	<div class="text pl-3">
-		    					<span class="date">2014-2015</span>
-		    					<h2>Tertiary Education</h2>
-		    					<span class="position">MLG College of Learning Inc.</span>
-		    					<p>A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
-		    				</div>
 	    				</div>
 					  </div>
 
@@ -194,86 +170,39 @@
 					    		<span class="flaticon-ideas"></span>
 					    	</div>
 					    	<div class="text pl-3">
-		    					<span class="date">2014-2015</span>
-		    					<h2>Software Developer</h2>
-		    					<span class="position">Cambridge University</span>
-		    					<p>A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
+								@foreach($experiences as $experience)
+		    					<span class="date">{{ $experience->year }}</span>
+		    					<h2><span>{{ $experience->job_title }}</span></h2>
+		    					<span class="position">{{ $experience->company }}</span>
+		    					<p>{{ $experience->duty }}</p>
+								@endforeach
 		    				</div>
 	    				</div>
-	    				<div class="resume-wrap d-flex ftco-animate">
-	    					<div class="icon d-flex align-items-center justify-content-center">
-					    		<span class="flaticon-ideas"></span>
-					    	</div>
-					    	<div class="text pl-3">
-		    					<span class="date">2014-2015</span>
-		    					<h2>Tertiary Education</h2>
-		    					<span class="position">MLG College of Learning Inc.</span>
-		    					<p>A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
-		    				</div>
-	    				</div>
-					  <div id="page-3" class= "page three">
-					  	<h2 class="heading">Skills</h2>
-					  	<div class="row progress-circle mb-5">
-					  		<div class="col-lg-4 mb-4">
-						      <div class="bg-white rounded-lg shadow p-4">
-						        <h2 class="h5 font-weight-bold text-center mb-4">HTML</h2>
-
-						        <!-- Progress bar 1 -->
-						        <div class="progress mx-auto" data-value='25'>
-						            <span class="progress-left">
-                                        <span class="progress-bar border-primary"></span>
-						            </span>
-						            <span class="progress-right">
-                                        <span class="progress-bar border-primary"></span>
-						            </span>
-						            <div class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
-						                <div class="h2 font-weight-bold">25<sup class="small">%</sup></div>
-						            </div>
-						        </div>
-						        <!-- END -->
-						      </div>
-						    </div>
-
-						    <div class="col-lg-4 mb-4">
-						      <div class="bg-white rounded-lg shadow p-4">
-						        <h2 class="h5 font-weight-bold text-center mb-4">CSS</h2>
-
-						        <!-- Progress bar 2 -->
-						        <div class="progress mx-auto" data-value='25'>
-						            <span class="progress-left">
-                                        <span class="progress-bar border-primary"></span>
-						            </span>
-						            <span class="progress-right">
-                                        <span class="progress-bar border-primary"></span>
-						            </span>
-						            <div class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
-						                <div class="h2 font-weight-bold">25<sup class="small">%</sup></div>
-						            </div>
-						        </div>
-						        <!-- END -->
-						      </div>
-						    </div>
-
-						    <div class="col-lg-4 mb-4">
-						      <div class="bg-white rounded-lg shadow p-4">
-						        <h2 class="h5 font-weight-bold text-center mb-4">Javascript</h2>
-
-						        <!-- Progress bar 3 -->
-						        <div class="progress mx-auto" data-value='15'>
-						            <span class="progress-left">
-                                        <span class="progress-bar border-primary"></span>
-						            </span>
-						            <span class="progress-right">
-                                        <span class="progress-bar border-primary"></span>
-						            </span>
-						            <div class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
-						                <div class="h2 font-weight-bold">15<sup class="small">%</sup></div>
-						            </div>
-						        </div>
-						        <!-- END -->
-						      </div>
-						    </div>
-					  	</div>
+						<div id="page-3" class="page three">
+							<h2 class="heading">Skills</h2>
+							<div class="row progress-circle mb-5">
+								@foreach($skills as $skill)
+								<div class="col-lg-4 mb-4">
+									<div class="bg-white rounded-lg shadow p-4">
+										<h2 class="h5 font-weight-bold text-center mb-4">{{ $skill->language_name }}</h2>
+										<!-- Progress bar -->
+										<div class="progress mx-auto" data-value='{{ $skill->percent }}'>
+											<span class="progress-left">
+												<span class="progress-bar border-primary"></span>
+											</span>
+											<span class="progress-right">
+												<span class="progress-bar border-primary"></span>
+											</span>
+											<div class="progress-value w-100 h-100 rounded-circle d-flex align-items-center justify-content-center">
+												<div class="h2 font-weight-bold">{{ $skill->percent }}<sup class="small">%</sup></div>
+											</div>
+										</div>
+										<!-- END Progress bar -->
+									</div>
+								</div>
+								@endforeach
+							</div>
+						</div>
 
 					  	<!-- <div class="row">
 					  		<div class="col-md-6 animate-box">
@@ -317,133 +246,32 @@
 			  </div>
     	</div>
     </section>
-
-    <!-- <section class="ftco-section" id="services-section">
-    	<div class="container-fluid px-md-5">
-    		<div class="row justify-content-center py-5 mt-5">
-          <div class="col-md-12 heading-section text-center ftco-animate">
-          	<h1 class="big big-2">Services</h1>
-            <h2 class="mb-4">Services</h2>
-            <p>Experience excellence through our unique suite of services. <br>Let us be your partner in achieving your goals efficiently and effectively.</p>
-          </div>
-        </div>
-    		<div class="row">
-					<div class="col-md-4 text-center d-flex ftco-animate">
-						<a href="#" class="services-1 shadow">
-							<span class="icon">
-								<i class="flaticon-analysis"></i>
-							</span>
-							<div class="desc">
-								<h3 class="mb-5">Web Developer</h3>
-								<p>As a web developer, I'm the architect behind your online presence. Let's collaborate to turn your vision into a seamless and captivating digital reality.</p>
-							</div>
-						</a>
-					</div>
-					<div class="col-md-4 text-center d-flex ftco-animate">
-						<a href="#" class="services-1 shadow">
-							<span class="icon">
-								<i class="flaticon-flasks"></i>
-							</span>
-							<div class="desc">
-								<h3 class="mb-5">Photography</h3>
-								<p>Photography is my passion, freezing moments in time with a click. Let's create memories that last a lifetime, one snapshot at a time.</p>
-							</div>
-						</a>
-					</div>
-					<div class="col-md-4 text-center d-flex ftco-animate">
-						<a href="#" class="services-1 shadow">
-							<span class="icon">
-								<i class="flaticon-ideas"></i>
-							</span>
-							<div class="desc">
-								<h3 class="mb-5">Editor</h3>
-								<p> As an editor for both photos and videos, I sprinkle magic to make your visuals pop. Let's turn ordinary moments into extraordinary memories.</p>
-							</div>
-						</a>
-					</div>
-				</div>
-    	</div>
-    </section> -->
  
     <section class="ftco-section ftco-project" id="projects-section">
-    	<div class="container-fluid px-md-0">
-    		<div class="row no-gutters justify-content-center pb-5">
-          <div class="col-md-12 heading-section text-center ftco-animate">
-          	<h1 class="big big-2">Projects</h1>
-            <h2 class="mb-4">Our Projects</h2>
-            <p>This project is poised to redefine norms and elevate standards in its respective domain.<br> Its pioneering approach promises to deliver unparalleled value to users</p>
-          </div>
+    <div class="container-fluid px-md-0">
+        <div class="row no-gutters justify-content-center pb-5">
+            <div class="col-md-12 heading-section text-center ftco-animate">
+                <h1 class="big big-2">Projects</h1>
+                <h2 class="mb-4">Our Projects</h2>
+                <p>This project is poised to redefine norms and elevate standards in its respective domain.<br> Its pioneering approach promises to deliver unparalleled value to users</p>
+            </div>
         </div>
-    		<div class="row no-gutters">
-    			<div class="col-md-4">
-    				<div class="project img ftco-animate d-flex justify-content-center align-items-center" style="background-image: url(assets/images/project.png);">
-    					<div class="overlay"></div>
-	    				<div class="text text-center p-4">
-	    					<h3><a href="http://paradise.webactivities.online/">Paradise Island Book & Reservation</a></h3>
-	    					<span>Web Design Project</span>
-	    				</div>
-    				</div>
-  				</div>
-                  <div class="col-md-4">
-    				<div class="project img ftco-animate d-flex justify-content-center align-items-center" style="background-image: url(assets/images/project.2.png);">
-    					<div class="overlay"></div>
-	    				<div class="text text-center p-4">
-	    					<h3><a href="#">Project Portfolio</a></h3>
-	    					<span>HCI Project</span>
-	    				</div>
-    				</div>
-  				</div>
-    		</div>
-    	</div>
-    </section>
+        <div class="row no-gutters">
+            @foreach($works as $work)
+            <div class="col-md-4">
+                <div class="project img ftco-animate d-flex justify-content-center align-items-center" style="background-image: url(assets/images/project.png);">
+                    <div class="overlay"></div>
+                    <div class="text text-center p-4">
+                        <h3><a href="http://paradise.webactivities.online/">{{ $work->name }}</a></h3>
+                        <span>{{ $work->type }}</span>
+                    </div>
+                </div>
+            </div>
+            @endforeach
+        </div>
+    </div>
+</section>
 
-    <section class="ftco-section" id="blog-section">
-      <div class="container">
-        <div class="row justify-content-center mb-5 pb-5">
-          <div class="col-md-7 heading-section text-center ftco-animate">
-            <h1 class="big big-2">Blog</h1>
-            <h2 class="mb-4">Our Blog</h2>
-            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia</p>
-          </div>
-        </div>
-        <div class="row d-flex">
-          <div class="col-md-4 d-flex ftco-animate">
-          	<div class="blog-entry justify-content-end">
-              <a href="single.html" class="block-20" style="background-image: url('images/image_1.jpg');">
-              </a>
-              <div class="text mt-3 float-right d-block">
-                <h3 class="heading"><a href="single.html">Why Lead Generation is Key for Business Growth</a></h3>
-                <div class="d-flex align-items-center mb-3 meta">
-	                <p class="mb-0">
-	                	<span class="mr-2">Sept. 12, 2019</span>
-	                	<a href="#" class="mr-2">Admin</a>
-	                	<a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a>
-	                </p>
-                </div>
-                <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4 d-flex ftco-animate">
-          	<div class="blog-entry justify-content-end">
-              <a href="single.html" class="block-20" style="background-image: url('images/image_2.jpg');">
-              </a>
-              <div class="text mt-3 float-right d-block">
-                <h3 class="heading"><a href="single.html">Why Lead Generation is Key for Business Growth</a></h3>
-                <div class="d-flex align-items-center mb-3 meta">
-	                <p class="mb-0">
-	                	<span class="mr-2">Sept. 12, 2019</span>
-	                	<a href="#" class="mr-2">Admin</a>
-	                	<a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a>
-	                </p>
-                </div>
-                <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
 
     <section class="ftco-section ftco-hireme img" style="background-image: url(assets/images/bg_1.jpg)">
     	<div class="overlay"></div>
@@ -530,7 +358,7 @@
 				</div>
 
 				<div class="col-md-6 d-flex">
-					<div class="img" style="background-image: url(assets/images/about.jpg);"></div>
+					<div class="img" style="background-image: url(assets/images/map.png);"></div>
 				</div>
 				</div>
 			</div>

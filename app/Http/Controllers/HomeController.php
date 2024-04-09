@@ -6,7 +6,6 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Educations;
 use App\Models\Experiences;
-use App\Models\MyBlogs;
 use App\Models\Works;
 use App\Models\Skills;
 
@@ -33,10 +32,9 @@ class HomeController extends Controller
         $userCount = User::count();
         $experiencesCount = Experiences::count();
         $educationsCount = Educations::count();
-        $myblogsCount = MyBlogs::count();
         $worksCount = Works::count();
         $skillsCount = Skills::count();
 
-        return view('home', compact('userCount','experiencesCount','educationsCount','myblogsCount','worksCount','skillsCount'));
+        return view('home', compact('userCount','experiencesCount','educationsCount','worksCount','skillsCount'));
     }
 }

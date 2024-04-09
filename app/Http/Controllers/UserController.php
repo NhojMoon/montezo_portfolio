@@ -82,14 +82,14 @@ class UserController extends Controller
 
     public function destroy(string $id)
     {
-        $admins = User::findOrFail($id);
-  
-        if ($admins->isAdmin()) {
-            return redirect()->route('admin.index')->with('success', 'ADMIN USER CANNOT BE DELETED!!');
+        $admin = User::findOrFail($id);
+
+        if ($admin->isAdmin()) {
+            return redirect()->route('admin.index')->with('error', 'ADMIN USER CANNOT BE DELETED!!');
         }
-  
-        $admins->delete();
-  
+
+        $admin->delete();
+
         return redirect()->route('admin.index')->with('success', 'User has been deleted successfully');
     }
 }

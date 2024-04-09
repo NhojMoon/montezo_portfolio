@@ -6,7 +6,6 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Educations;
 use App\Models\Experiences;
-use App\Models\MyBlogs;
 use App\Models\Works;
 use App\Models\Skills;
 
@@ -20,10 +19,9 @@ class FrontendController extends Controller
         $works = Works::all();
         $educations = Educations::all();
         $experiences = Experiences::all();
-        $myblogs = MyBlogs::all();
         
 
-        return view('welcome', ['admin' => $admin, 'skills' => $skills, 'works' => $works, 'educations' => $educations, 'experiences' => $experiences, 'myblogs' => $myblogs]);
+        return view('welcome', ['admin' => $admin, 'skills' => $skills, 'works' => $works, 'educations' => $educations, 'experiences' => $experiences]);
     }
     
     public function create()
