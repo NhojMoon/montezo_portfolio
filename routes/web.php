@@ -6,10 +6,10 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\FrontendController;
 use App\Http\Controllers\WorkController;
-use App\Http\Controllers\MyblogController;
 use App\Http\Controllers\EducationController;
 use App\Http\Controllers\ExperienceController;
 use App\Http\Controllers\SkillController;
+use App\Http\Controllers\ContactController;
 use App\Http\Middleware\RoleChecker;
 use App\Models\Educations;
 
@@ -37,7 +37,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
     });
 
 Route::resource('work', WorkController::class);
-Route::resource('myblog', MyBlogController::class);
+Route::resource('contacts', ContactController::class);
 Route::resource('education', EducationController::class);
 Route::resource('experience', ExperienceController::class);
 Route::resource('skills', SkillController::class);

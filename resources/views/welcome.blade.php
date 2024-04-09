@@ -345,25 +345,26 @@
 				</div>
 
 				<div class="row no-gutters block-9">
-				<div class="col-md-6 order-md-last d-flex">
-					<form action="#" name="submit-to-google-sheet" class="bg-light p-4 p-md-5 contact-form">
-						<div class="form-group">
-							<input type="text" name="Name" class="form-control" placeholder="Your Name" required><br>
-							<input type="email" name="Email" class="form-control" placeholder="Your Email" required><br>
-							<textarea name="Message" id="" cols="30" rows="7" class="form-control" placeholder="Message"></textarea><br>
-							<button type="submit" value="Send Message" class="btn btn-primary py-3 px-5">Send Message</button>
-						</div>
-					</form>
-				
+					<div class="col-md-6 order-md-last d-flex">
+						<form action="{{ route('contacts.store') }}" method="POST" class="bg-light p-4 p-md-5 contact-form">
+							@csrf
+							<div class="form-group">
+								<input type="text" name="contact_name" class="form-control" placeholder="Your Name" required><br>
+								<input type="email" name="contact_email" class="form-control" placeholder="Your Email" required><br>
+								<textarea name="contact_message" id="" cols="30" rows="7" class="form-control" placeholder="Message" required></textarea><br>
+								<button type="submit" value="Send Message" class="btn btn-primary py-3 px-5">Send Message</button>
+							</div>
+						</form>
+					</div>
+
+					<div class="col-md-6 d-flex">
+						<div class="img" style="background-image: url(assets/images/map.png);"></div>
+					</div>
 				</div>
 
-				<div class="col-md-6 d-flex">
-					<div class="img" style="background-image: url(assets/images/map.png);"></div>
-				</div>
-				</div>
-			</div>
 
-			<script>
+
+			<!-- <script>
 				const scriptURL = 'https://script.google.com/macros/s/AKfycby2sFwpWHtqTXpHmGqPyS83w6NM69AvonMphyZ7VuTkKZVf9bxfGPgDG5QUGMbguWHvCQ/exec'
 				const form = document.forms['submit-to-google-sheet']
 
@@ -373,7 +374,7 @@
 					.then(response => console.log('Success!', response))
 					.catch(error => console.error('Error!', error.message))
 				})
-			</script>
+			</script> -->
 
     	</section>
 		

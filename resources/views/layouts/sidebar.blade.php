@@ -20,6 +20,7 @@
                             <li><a class="nav-link" href="/education">Educational</a></li>
                             <li><a class="nav-link" href="/experience">Experiences</a></li>
                             <li><a class="nav-link" href="/skills">Skills</a></li>
+                            <li><a class="nav-link" href="/contacts">Contacts</a></li>
                             <li><a class="nav-link" href="/work">Project (works)</a></li>
                         </ul>
                     </li>
